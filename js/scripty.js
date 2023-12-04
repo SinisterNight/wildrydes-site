@@ -8,8 +8,15 @@ captchaWindow.document.write(`
   <div id="captcha-overlay" class="captcha-overlay">
     <div class="captcha-container">
       <h2>Complete the Captcha to Access the Site</h2>
-      <img src="${captchaImageSrc}" alt="Captcha Image">
-      <input type="text" id="captchaInput" placeholder="Enter the code">
+      <h3>How many acorns are in this bucket?</h3>
+      
+      <!-- Centered Image -->
+      <div style="text-align: center;">
+       <img src="${captchaImageSrc}" alt="Captcha Image">
+      </div>
+
+      <!-- Input field -->
+      <input type="text" id="captchaInput" placeholder="Enter your guess">
       <button onclick="verifyCaptcha()">Submit</button>
     </div>
   </div>
