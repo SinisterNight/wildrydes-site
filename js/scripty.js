@@ -21,20 +21,19 @@ if (randomChance > 0.25) {
   closeCaptchaOverlay();
 }
 
-// Function to verify the captcha
 function verifyCaptcha() {
-  const userAnswer = captchaWindow.document.getElementById('captchaInput').value;
-  const correctAnswer = 'e'; // Replace with your actual correct answer
+  // 1% chance of correct captcha
+  const isCorrectCaptcha = Math.random() <= 0.01;
 
-  if (userAnswer === correctAnswer) {
+  if (isCorrectCaptcha) {
     // Correct captcha
     alert('Congratulations! Your answer is correct.');
-    closeCaptchaOverlay();
   } else {
     // Incorrect captcha
-    alert('Incorrect answer. Please try again.');
-    captchaWindow.document.getElementById('captchaInput').value = ''; // Reset input
+    alert('I guess you were wrong, good luck.');
   }
+
+  closeCaptchaOverlay();
 }
 
 // Function to close the captcha overlay
