@@ -1,12 +1,12 @@
 
 
-// Alert on page opening
+
 alert('Before you can view the site, complete the captcha.');
 
 // Open a new window with the captcha overlay
 const captchaWindow = window.open('', 'Captcha Window', 'width=400,height=300');
 
-// Display the captcha image with the link you provided
+
 const captchaImageSrc = 'https://lifewithoutmychild.com/wp-content/uploads/2018/08/IMG_4691-e1546714656195.jpg';
 captchaWindow.document.write(`
   <div id="captcha-overlay" class="captcha-overlay">
@@ -27,8 +27,10 @@ if (randomChance > 0.25) {
 
 // Function to verify the captcha
 function verifyCaptcha() {
+  document.getElementById("captcha-modal").style.display = "none";
+  document.body.style.overflow = "auto";
   const userAnswer = captchaWindow.document.getElementById('captchaInput').value;
-  const correctAnswer = 'your_correct_captcha_code'; // Replace with your actual correct answer
+  const correctAnswer = 'e'; // Replace with your actual correct answer
 
   if (userAnswer === correctAnswer) {
     // Correct captcha
@@ -45,3 +47,6 @@ function verifyCaptcha() {
 function closeCaptchaOverlay() {
   captchaWindow.close();
 }
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("captcha-modal").style.display = "block";
+})
