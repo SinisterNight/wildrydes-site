@@ -12,7 +12,7 @@ captchaWindow.document.write(`
       
       <!-- Centered Image -->
       <div style="text-align: center;">
-       <img src="${captchaImageSrc}" alt="Captcha Image">
+        <img src="${captchaImageSrc}" alt="Captcha Image">
       </div>
 
       <!-- Input field -->
@@ -21,6 +21,7 @@ captchaWindow.document.write(`
     </div>
   </div>
 `);
+
 
 // Chance rate of the captcha (25%)
 const randomChance = Math.random();
